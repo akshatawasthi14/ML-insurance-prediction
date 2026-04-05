@@ -1,5 +1,8 @@
 # Insurance Cost Analysis and Classification
 
+A beginner machine learning project demonstrating data analysis, feature engineering, and classification modeling on an insurance dataset
+
+
 ## Overview
 
 This project applies **data analysis, data cleaning, feature engineering, and machine learning** techniques to an insurance dataset to understand the factors influencing medical charges and to predict whether an individual is likely to incur **high or low insurance costs**.

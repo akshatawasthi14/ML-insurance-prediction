@@ -1,105 +1,143 @@
-Insurance Cost Analysis and Classification
-Overview
+# Insurance Cost Analysis and Classification
 
-This project applies data analysis, preprocessing, feature engineering, and machine learning techniques to an insurance dataset to understand the factors influencing medical charges and to predict whether an individual is likely to incur high or low insurance costs.
+## Overview
 
-The workflow follows a structured machine learning pipeline, starting with exploratory data analysis and statistical feature analysis, and culminating in a classification model built using Logistic Regression.
+This project applies **data analysis, data cleaning, feature engineering, and machine learning** techniques to an insurance dataset to understand the factors influencing medical charges and to predict whether an individual is likely to incur **high or low insurance costs**.
 
-Problem Statement
+The workflow follows a structured machine learning pipeline, including exploratory data analysis (EDA), statistical feature analysis, and building a **Logistic Regression classification model**.
 
-Medical insurance charges vary significantly based on individual characteristics such as age, lifestyle, and health indicators. The objective of this project is to:
+---
 
-Analyze and identify key factors affecting insurance charges
-Use statistical methods to evaluate feature importance
-Transform the problem into a classification task (high vs low charges)
-Build a machine learning model to predict insurance cost categories
-Dataset Description
+## Problem Statement
 
-The dataset contains demographic and health-related information about individuals along with their insurance charges.
+Medical insurance charges vary significantly based on individual characteristics such as age, lifestyle, and health indicators. This project aims to:
 
-Features:
+* Identify key factors affecting insurance charges
+* Evaluate feature importance using statistical methods
+* Convert the problem into a classification task (high vs low charges)
+* Build a model to predict insurance cost categories
 
-age: Age of the individual
-sex: Gender
-bmi: Body Mass Index
-children: Number of dependents
-smoker: Smoking status
-region: Residential region
+---
 
-Target:
+## Dataset Description
 
-charges: Continuous insurance cost
-high_charges: Binary variable created using the median of charges (0 = low, 1 = high)
-Methodology
-Exploratory Data Analysis
+### Features
 
-Initial analysis was performed to understand the dataset structure, distributions, and relationships between variables. This included checking data types, summary statistics, missing values, and duplicates.
+* **age** – Age of the individual
+* **sex** – Gender
+* **bmi** – Body Mass Index
+* **children** – Number of dependents
+* **smoker** – Smoking status
+* **region** – Residential region
 
-Data Cleaning
-Duplicate records were removed
-Data types were verified and corrected
-Categorical variables such as sex and smoker were converted into numerical format
-Feature Engineering
-One-hot encoding was applied to the region feature
-A binary gender feature (is_female) was created
-A new target variable high_charges was created by splitting charges based on the median
-Feature Analysis
+### Target Variables
 
-Statistical methods were used to evaluate relationships between features and insurance charges:
+* **charges** – Continuous insurance cost
+* **high_charges** – Binary variable created using the median of charges
+  * 0 → Low charges
+  * 1 → High charges
 
-Pearson correlation was used to measure linear relationships
-Chi-square tests were used to assess dependency between categorical variables and the target
+---
 
-Key insights:
+## Methodology
 
-Smoking status is the strongest predictor of high insurance charges
-BMI and age show moderate positive relationships with charges
-Gender, region, and number of children have minimal impact
+### 1. Exploratory Data Analysis (EDA)
 
-These findings guided feature selection for the model.
+* Examined dataset structure and summary statistics
+* Checked for missing values and duplicates
+* Analyzed distributions of numerical features
+* Explored relationships between features and charges
 
-Model Building
+---
 
-A Logistic Regression classification model was built to predict whether an individual falls into the high or low insurance cost category.
+### 2. Data Cleaning
+
+* Removed duplicate records
+* Verified data types
+* Converted categorical variables (sex, smoker) into numerical format
+
+---
+
+### 3. Feature Engineering
+
+* Applied one-hot encoding to the region column
+* Created a binary gender feature (**is_female**)
+* Generated a new target variable (**high_charges**) using the median of charges
+
+---
+
+### 4. Feature Analysis
+
+Statistical techniques were used to evaluate relationships between features and insurance charges:
+
+* **Pearson Correlation** for numerical relationships
+* **Chi-square Test** for categorical relationships
+
+#### Key Insights
+
+* Smoking status is the strongest predictor of insurance charges
+* BMI and age have moderate positive relationships with charges
+* Number of children has minimal impact
+* Gender and region have negligible influence
+
+These insights were used to guide feature selection for the model.
+
+---
+
+### 5. Model Building
+
+A **Logistic Regression classifier** was used to predict whether an individual falls into the high or low insurance cost category.
 
 Steps:
 
-Selected relevant features (age, bmi, smoker, children, gender)
-Split the dataset into training and testing sets
-Applied feature scaling using StandardScaler (after splitting to avoid data leakage)
-Trained the model on the training data
-Model Evaluation
+* Selected relevant features (age, bmi, smoker)
+* Split the dataset into training and testing sets
+* Applied feature scaling using StandardScaler (after splitting to avoid data leakage)
+* Trained the model on the training data
 
-The model was evaluated using standard classification metrics:
+---
 
-Accuracy
-Precision
-Recall
-F1-score
-Confusion matrix
+### 6. Model Evaluation
 
-The model achieved approximately 90% accuracy with balanced precision and recall, indicating strong and reliable performance across both classes.
+The model was evaluated using:
 
-Results and Interpretation
+* Accuracy
+* Precision
+* Recall
+* F1-score
+* Confusion matrix
 
-The model successfully captures patterns in the data and is able to distinguish between high and low insurance cost individuals. The results align with the feature analysis, confirming that smoking, BMI, and age are key drivers of insurance charges.
+The model achieved approximately **91% accuracy** with balanced precision and recall, indicating reliable performance across both classes.
 
-Conclusion
+---
 
-This project demonstrates the importance of combining data analysis and machine learning to solve real-world problems. By using statistical techniques for feature understanding and applying a classification model, the project effectively predicts insurance cost categories and highlights the impact of major contributing factors.
+## Results and Interpretation
 
-Technologies Used
+The model successfully distinguishes between high and low insurance cost individuals. The results align with the feature analysis.
 
-Python
-Pandas, NumPy
-Matplotlib, Seaborn
-Scikit-learn
-SciPy
+---
 
-Learning Outcomes
+## Conclusion
 
-Understanding of end-to-end machine learning workflow
-Practical experience with data cleaning and preprocessing
-Application of feature engineering techniques
-Use of statistical methods for feature analysis
-Building and evaluating classification models
+This project demonstrates how data analysis and feature engineering can be combined with machine learning to solve a real-world problem. By transforming the dataset into a classification task and using statistical insights for feature selection, a reliable model was developed to predict insurance cost categories.
+
+---
+
+## Technologies Used
+
+* Python
+* Pandas, NumPy
+* Matplotlib, Seaborn
+* Scikit-learn
+
+---
+
+## Learning Outcomes
+
+* Understanding of end-to-end machine learning workflow
+* Experience with data cleaning and preprocessing
+* Application of feature engineering techniques
+* Use of statistical methods for feature analysis
+* Building and evaluating classification models
+
+---
